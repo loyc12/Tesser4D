@@ -52,7 +52,6 @@ DEFAULT_GOAL: all
 		re run rerun \
 		leaks releaks \
 		vleaks revleaks \
-		norm libft \
 		brew cmake \
 		glfw grind \
 
@@ -61,7 +60,7 @@ DEFAULT_GOAL: all
 #------------------------------------------------------------------------------#
 
 # Flags for gcc, valgrind and leaks
-CFLAGS	=	-Wall -Werror -Wextra $(XFLAGS)
+CFLAGS	=	-Wall -Werror -Wextra -std=c++98 $(XFLAGS)
 LFLAGS	=	-atExit
 VFLAGS	=	--leak-check=full --show-leak-kinds=all --trace-children=yes --track-fds=yes
 
@@ -79,14 +78,14 @@ HIDE	=	@
 #------------------------------------------------------------------------------#
 
 # Shortcuts
-CC		=	gcc
+CC		=	g++
 RM		=	rm -rf
 CPY		=	cp -f
 MKDR	=	mkdir -p
 INCLUDE =	-I include
 
 # Creates file paths
-SRCS	=	$(addprefix $(SRCDIR), $(addsuffix .c, $(FILES)))
+SRCS	=	$(addprefix $(SRCDIR), $(addsuffix .cpp, $(FILES)))
 OBJS	=	$(addprefix $(OBJDIR), $(addsuffix .o, $(FILES)))
 
 
@@ -116,7 +115,7 @@ $(NAME): $(OBJS)
 	@echo "$(DEFCOL)"
 
 # Compiles each source file into a .o file
-$(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.c
+$(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.cpp
 	@echo "$(YELLOW)Compiling file : $< $(DEFCOL)"
 	$(HIDE) $(CC) $(MODE) $(CFLAGS) -c $< -o $@ $(INCLUDE)
 
@@ -124,8 +123,6 @@ $(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.c
 deps:
 	$(HIDE) git submodule init --quiet
 	$(HIDE) git submodule update --quiet
-	@echo "$(YELLOW)Initializing Libft42 module $(WHITE)"
-	$(HIDE) cd Libft42 && make
 	@echo "$(DEFCOL)"
 	@echo "$(YELLOW)Initializing MLX42 module $(WHITE)"
 	$(HIDE) cd MLX42 && cmake -B build && cmake --build build -j4
@@ -143,8 +140,6 @@ clean:
 	$(HIDE) $(RM) $(OBJS)
 	$(HIDE) $(RM) $(NAME).dSYM
 	@echo "$(MAGENTA)Deleted object files $(DEFCOL)"
-	$(HIDE) cd Libft42 && make clean
-	@echo "$(MAGENTA)Deleted Libft object files $(DEFCOL)"
 	@echo "$(DEFCOL)"
 
 # Removes object dir and executable
@@ -154,7 +149,6 @@ fclean: clean
 	@echo "$(RED)Deleted object directory $(DEFCOL)"
 	$(HIDE) $(RM) $(NAME)
 	@echo "$(RED)Deleted executable $(DEFCOL)"
-	$(HIDE) cd Libft42 && make fclean
 	@echo "$(DEFCOL)"
 
 xclear: xclean
@@ -201,23 +195,6 @@ vleaks: all
 	$(HIDE) valgrind $(VFLAGS) --suppressions=include/supp ./$(NAME) $(ARGS) || true
 	@echo "$(DEFCOL)"
 	@echo "$(GREEN)Exited normally! $(DEFCOL)"
-	@echo "$(DEFCOL)"
-
-# Runs the norminette
-norm:
-	@echo "$(DEFCOL)"
-	@echo "$(YELLOW)Norminetting .c files $(RED)"
-	@norminette $(SRCS) | grep Error || true
-	@echo "$(DEFCOL)"
-	@echo "$(YELLOW)Norminetting .h files $(RED)"
-	@norminette include | grep Error || true
-	@echo "$(DEFCOL)"
-
-# Updates the libft module (requires push after)
-libft:
-	@echo "$(YELLOW)Updating libft to latest commit $(WHITE)"
-	$(HIDE) cd Libft42 && git pull origin main
-	@echo "$(GREEN)Libft updated! $(DEFCOL)"
 	@echo "$(DEFCOL)"
 
 #------------------------------------------------------------------------------#

@@ -3,37 +3,23 @@
 #------------------------------------------------------------------------------#
 
 # Executable name
-NAME	=	cub3D
+NAME	=	T4D
 
 # Arguments to call the executable with by default
-ARGS	= ./levels/map_5.cub
-
+ARGS	= ./levels/map_none.cub
 
 # Directory names
 SRCDIR		=	src/
 OBJDIR		=	bin/
-TSTDIR		=	tests/
-SUBDIRS		=	\
+#TSTDIR		=	tests/
+#SUBDIRS		=
 
 # Source file names (prefix their subdir if needed)
-FILES	=	casters \
-			checkers \
-			coorders \
-			doers \
-			drawers \
-			freeers \
-			getters \
-			hookers \
-			initializers \
-			masters \
-			mathers \
-			movers \
-			readers \
-			texturers \
-			tilers \
+FILES	=	main \
+			Tile \
 
 # Libraries (.a files) to include for compilation
-LIBS	=	./Libft42/libft.a \
-			./MLX42/build/libmlx42.a \
+LIBS	=	./MLX42/build/libmlx42.a #\
+			./include/T4D.hpp \
 
-LIBX	=	-lglfw -L "/Users/$$USER/.brew/opt/glfw/lib/"
+LIBX	=	-lglfw -L "/Users/$$USER/homebrew/opt/glfw/lib/"

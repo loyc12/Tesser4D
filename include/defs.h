@@ -6,7 +6,7 @@
 /*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2023/07/11 17:11:05 by llord            ###   ########.fr       */
+/*   Updated: 2024/02/07 17:03:01 by llord            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,16 @@
 // ======== SHORTCUTS ======== //
 
 // POINTERS
+# define PTR (void *)
+# define PTR2 (void **)
 # define ADRS (void **)&
 # define ADRS2 (void ***)&
 
 // BYTE PER PIXEL, = sizeof(int32_t)
 # define BPP 4
+
+# define elif else if
+# define byte unsigned char
 
 // ======== CONSTANTS ======== //
 

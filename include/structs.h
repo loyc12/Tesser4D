@@ -6,7 +6,7 @@
 /*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2023/06/16 10:38:22 by llord            ###   ########.fr       */
+/*   Updated: 2024/02/07 16:46:43 by llord            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_tile
 	t_tile		*east;
 	t_tile		*south;
 	t_tile		*west;
-	int			fff;
+	int			floodFlag;
 }				t_tile;
 
 //for mobile objects

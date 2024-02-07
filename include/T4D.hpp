@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   T4D.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2023/07/04 15:28:31 by llord            ###   ########.fr       */
+/*   Updated: 2024/02/07 16:36:51 by llord            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef T4D_H
+# define T4D_H
 
 // ======== LIBRARIES ======== //
 
 # include "../MLX42/include/MLX42/MLX42.h"
-# include "../Libft42/libft.h"
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -25,19 +24,14 @@
 # include <time.h>
 # include <math.h>
 
+# include "Tile.hpp"
 # include "defs.h"
 # include "enums.h"
-# include "funcs.h"
 # include "structs.h"
 
-#endif // CUB3D_H
+#endif // T4D_H
 
 /*
-
-	0======== BUGS ========0
-
-can sometime see through corners
-accepts colours without blue (ex: C 0,0)
 
 	0======== IDEAS ========0
 

@@ -6,7 +6,7 @@
 /*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2023/06/15 14:55:08 by llord            ###   ########.fr       */
+/*   Updated: 2024/02/07 16:32:50 by llord            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ typedef enum e_mstate
 	MSTATE_STARTING	= 0,
 	MSTATE_RUNNING	= 1,
 	MSTATE_RESTART	= 2,
-	MSTATE_ENDING	= 3
+	MSTATE_ENDING	= 3,
+	MSTATE_CRASH	= 4
 }			t_mstate;
 
 //texture ID (the index of the texture in the asset array)
@@ -39,7 +40,8 @@ typedef enum e_ttype
 {
 	TTYPE_ERROR	= -1,
 	TTYPE_ROOM	= 0,
-	TTYPE_WALL	= 1
+	TTYPE_WALL1	= 1,
+	TTYPE_WALL2	= 2,
 }			t_ttype;
 
 #endif //	ENUMS_H
