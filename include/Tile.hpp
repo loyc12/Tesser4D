@@ -7,44 +7,44 @@
 # include <sstream>
 # include <string>
 
-// CLASS ( implemented in .cpp file )
-
-class Coords {};
+# include "Coords.hpp"
 
 class Tile
 {
 	private:
 		// Attributes
-		Coords		c;
-		int			t;
-		Tile		*front;
-		Tile		*right;
+		Coords		C;
+		int			T;
+		//Tile		*front;
+		//Tile		*right;
 		//Tile		*top;
-		Tile		*back;
-		Tile		*left;
+		//Tile		*back;
+		//Tile		*left;
 		//Tile		*bottom;
 		int			fff;
 
 	protected:
-		// Checkers
-		void checkCoords( const Coords _c ) const;
-		void checkType( const int _t) const;
-		void matchTile( const Tile &other ) const;
-		void matchCoords( const Coords _c ) const;
 
 		// Nested Classes
-		class BadName : public std::exception
+		class BadCoords : public std::exception
 		{
 			public:
 				virtual const char *what() const throw() { return "Tile error : out of bound"; }
+		};
+		class BadType : public std::exception
+		{
+			public:
+				virtual const char *what() const throw() { return "Tile error : invalid type"; }
 		};
 
 	public:
 		// Constructors - Destructor
 		Tile();
-		Tile( int X, int Y );
-		Tile( const Coords _c );
-		Tile( const Coords _c, const int _t);
+		Tile( int _T );
+		Tile( int _X, int _Y, int _Z);
+		Tile( int _X, int _Y, int _Z, int _T);
+		Tile( const Coords _C );
+		Tile( const Coords _C, const int _T);
 		Tile( const Tile &other );
 		~Tile();
 
@@ -52,12 +52,21 @@ class Tile
 		Tile &operator= ( const Tile &other );
 
 		// Setters - Getters
-		void			setCoords( const Coords _c  );
+		void			setCoords( const Coords _C  );
+		void			setType( const int _T );
+
 		const Coords	getCoords( void ) const;
+		int				getType( void ) const;
 
 		void			setFFF( void );
 		bool			getFFF( void ) const;
 		void			resetFFF( void );
+
+		// Checkers
+		void checkCoords( const Coords _C ) const;
+		void checkType( const int _T) const;
+		bool matchTile( const Tile &other ) const;
+		bool matchCoords( const Coords _C ) const;
 
 		// Others
 		void			printTile( void );

@@ -5,31 +5,50 @@
 Tile::Tile()
 {
 	std::cout << "[ Called def. constr. for a TILE instance ]\n";
-	//this->c = Coords( 0, 0 );
+	this->C = Coords( 0, 0, 0 );
+	this->T = 0;
+	this->fff = false;
 }
-Tile::Tile( int X, int Y )
-{
-	(void)X;
-	(void)Y;
-
-	std::cout << "[ Called param. constr. for a TILE instance ]\n";
-	//this->c = Coords( X, Y );
-}
-Tile::Tile( const Coords _c )
+Tile::Tile( int _T )
 {
 	std::cout << "[ Called param. constr. for a TILE instance ]\n";
-	this->c = _c;
+	this->C = Coords( 0, 0, 0 );
+	this->T = _T;
+	this->fff = false;
 }
-Tile::Tile( const Coords _c, int _t )
+Tile::Tile( int X, int Y, int Z )
 {
 	std::cout << "[ Called param. constr. for a TILE instance ]\n";
-	this->c = _c;
-	this->t = _t;
+	this->C = Coords( X, Y, Z );
+	this->T = 0;
+	this->fff = false;
+}
+Tile::Tile( int X, int Y, int Z, int _T)
+{
+	std::cout << "[ Called param. constr. for a TILE instance ]\n";
+	this->C = Coords( X, Y, Z );
+	this->T = _T;
+	this->fff = false;
+}
+Tile::Tile( const Coords _C )
+{
+	std::cout << "[ Called param. constr. for a TILE instance ]\n";
+	this->C = _C;
+	this->T = 0;
+	this->fff = false;
+}
+Tile::Tile( const Coords _C, int _T )
+{
+	std::cout << "[ Called param. constr. for a TILE instance ]\n";
+	this->C = _C;
+	this->T = _T;
+	this->fff = false;
 }
 Tile::Tile( const Tile &other )
 {
 	std::cout << "[ Called copy constr. for a TILE instance ]\n";
-	this->c = other.getCoords();
+	this->C = other.getCoords();
+	this->T = other.getType();
 }
 Tile::~Tile() { std::cout << "[ Destroying a TILE instance ]\n"; }
 
@@ -38,46 +57,54 @@ Tile::~Tile() { std::cout << "[ Destroying a TILE instance ]\n"; }
 Tile &Tile::operator= ( const Tile &other )
 {
 	std::cout << "[ Called assign. op. for a TILE instance ]\n";
-	this->c = other.getCoords();
+	this->C = other.getCoords();
+	this->T = other.getType();
 
 	return *this;
 }
 
+std::ostream &operator<< (std::ostream &out, const Tile &rhs)
+{
+	out << rhs.getCoords();
+	return ( out );
+}
+
 // Checkers
 
-void	Tile::checkCoords( const Coords _c ) const
+void	Tile::checkCoords( const Coords _C ) const
 {
-	(void)_c;
-
-	//if ( _c.checkPos() )
-		//throw BadCoords();
+	if ( _C.checkPos() )
+		throw BadCoords();
 }
-void	Tile::checkType( const int _t ) const
+void	Tile::checkType( const int _T ) const
 {
-	(void)_t;
-
-	//if ( _t < 0 || _t > 3 )
-		//throw BadType();
+	if ( _T < 0 || _T > 3 )
+		throw BadType();
 }
 
-void	Tile::matchTile( const Tile &other ) const
+bool	Tile::matchTile( const Tile &other ) const
 {
-	(void)other;
-
-	//return ( this == &other)
+	return ( this->C.matchPos( other.getCoords() ) && this->T == other.getType() );
 }
-void	Tile::matchCoords( const Coords _c ) const
+bool	Tile::matchCoords( const Coords _C ) const
 {
-	(void)_c;
-
-	//return ( c_.x == this->c.x && c_.y == this->c.y )
+	return ( this->C.matchPos( _C ));
 }
 
 // Setters - Getters
 
-const Coords	Tile::getCoords( void ) const
+const Coords	Tile::getCoords( void ) const { return ( this->C ); }
+int				Tile::getType( void ) const { return ( this->T ); }
+
+void	Tile::setCoords( const Coords _C )
 {
-	return ( this->c );
+	this->checkCoords( _C );
+	this->C = _C;
+}
+void	Tile::setType( const int _T )
+{
+	this->checkType( _T );
+	this->T = _T;
 }
 
 void	Tile::setFFF( void )		{ this->fff = true; }
@@ -86,15 +113,4 @@ bool	Tile::getFFF( void ) const	{ return ( this->fff ); }
 
 // Others
 
-void	Tile::printTile( void )
-{
-	//std::cout << this->getCoords();
-}
-
-std::ostream &operator<< (std::ostream &out, const Tile &rhs)
-{
-	(void)rhs;
-
-	//out << rhs.getCoords();
-	return ( out );
-}
+void	Tile::printTile( void ) { std::cout << this->getCoords(); }

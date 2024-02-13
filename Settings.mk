@@ -17,6 +17,7 @@ OBJDIR		=	bin/
 # Source file names (prefix their subdir if needed)
 FILES	=	main \
 			Tile \
+			Coords \
 
 # Libraries (.a files) to include for compilation
 LIBS	=	./MLX42/build/libmlx42.a #\
