@@ -17,10 +17,12 @@ class Tile
 		// Attributes
 		Coords		c;
 		int			t;
-		Tile		*north;
-		Tile		*east;
-		Tile		*south;
-		Tile		*west;
+		Tile		*front;
+		Tile		*right;
+		//Tile		*top;
+		Tile		*back;
+		Tile		*left;
+		//Tile		*bottom;
 		int			fff;
 
 	protected:

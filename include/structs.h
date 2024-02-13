@@ -6,7 +6,7 @@
 /*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2024/02/07 16:46:43 by llord            ###   ########.fr       */
+/*   Updated: 2024/02/13 14:46:33 by llord            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,6 @@ typedef struct s_master
 	char			player_dir;
 	int				player_spawn_count;
 	int				master_state;
-	bool			should_refresh;
 
 }					t_master;
 
