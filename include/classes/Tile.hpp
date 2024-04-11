@@ -13,14 +13,14 @@ class Tile
 {
 	private:
 		// Attributes
-		Coords		C;
-		int			T;
-		//Tile		*front;
-		//Tile		*right;
-		//Tile		*top;
-		//Tile		*back;
-		//Tile		*left;
-		//Tile		*bottom;
+		Coords		C; // coord
+		int			T; // type
+		Tile		*front;
+		Tile		*right;
+		Tile		*top;
+		Tile		*back;
+		Tile		*left;
+		Tile		*bottom;
 		int			fff;
 
 	protected:
@@ -62,7 +62,6 @@ class Tile
 		bool	getFFF( void ) const;
 		void	resetFFF( void );
 
-	/*
 		void	setFront( Tile *T );
 		void	setRight( Tile *T );
 		void	setTop( Tile *T );
@@ -76,7 +75,6 @@ class Tile
 		Tile	*getBack( void );
 		Tile	*getLeft( void );
 		Tile	*getBottom( void );
-	*/
 
 		// Checkers
 		void	checkCoords( const Coords _C ) const;

@@ -111,6 +111,8 @@ void	Tile::setFFF( void )		{ this->fff = true; }
 void	Tile::resetFFF( void )		{ this->fff = false; }
 bool	Tile::getFFF( void ) const	{ return ( this->fff ); }
 
+
+
 // Others
 
 void	Tile::printTile( void ) { std::cout << this->getCoords(); }
