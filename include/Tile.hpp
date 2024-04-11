@@ -52,24 +52,40 @@ class Tile
 		Tile &operator= ( const Tile &other );
 
 		// Setters - Getters
-		void			setCoords( const Coords _C  );
-		void			setType( const int _T );
+		void	setCoords( const Coords _C  );
+		void	setType( const int _T );
 
 		const Coords	getCoords( void ) const;
 		int				getType( void ) const;
 
-		void			setFFF( void );
-		bool			getFFF( void ) const;
-		void			resetFFF( void );
+		void	setFFF( void );
+		bool	getFFF( void ) const;
+		void	resetFFF( void );
+
+	/*
+		void	setFront( Tile *T );
+		void	setRight( Tile *T );
+		void	setTop( Tile *T );
+		void	setBack( Tile *T );
+		void	setLeft( Tile *T );
+		void	setBottom( Tile *T );
+
+		Tile	*getFront( void );
+		Tile	*getRight( void );
+		Tile	*getTop( void );
+		Tile	*getBack( void );
+		Tile	*getLeft( void );
+		Tile	*getBottom( void );
+	*/
 
 		// Checkers
-		void checkCoords( const Coords _C ) const;
-		void checkType( const int _T) const;
-		bool matchTile( const Tile &other ) const;
-		bool matchCoords( const Coords _C ) const;
+		void	checkCoords( const Coords _C ) const;
+		void	checkType( const int _T) const;
+		bool	matchTile( const Tile &other ) const;
+		bool	matchCoords( const Coords _C ) const;
 
 		// Others
-		void			printTile( void );
+		void	printTile( void );
 
 };
 
