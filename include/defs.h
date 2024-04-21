@@ -6,7 +6,7 @@
 /*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2024/04/21 16:31:31 by llord            ###   ########.fr       */
+/*   Updated: 2024/04/21 17:08:38 by llord            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,15 @@
 # define ADRS2	( void***) &
 
 // BYTE PER PIXEL, = sizeof(int32_t)
-# define BPP 4
+# define BPP	4
 
-# define elif else if
-# define byte unsigned char
+# define elif	else if
+# define byte	unsigned char
+
+# define XCPT( x )	public std::exception { public: virtual const char *what() const throw() { return x; } }
 
 # define DEBUG_MODE true
-# define DEBUG( x ) if ( DEBUG_MODE ) { x }
+# define DEBUG( x )	if ( DEBUG_MODE ) { x }
 
 // ======== CONSTANTS ======== //
 

@@ -21,16 +21,8 @@ class Tile
 	protected:
 
 		// Nested Classes
-		class BadCoords : public std::exception
-		{
-			public:
-				virtual const char *what() const throw() { return "Tile error : out of bound"; }
-		};
-		class BadType : public std::exception
-		{
-			public:
-				virtual const char *what() const throw() { return "Tile error : invalid type"; }
-		};
+		class BadCoords	:	XCPT( "Tile error : out of bound"; );
+		class BadType :		XCPT( "Tile error : invalid type"; );
 
 	public:
 		// Constructors - Destructor
@@ -44,44 +36,44 @@ class Tile
 		~Tile();
 
 		// Operators
-		Tile &operator= ( const Tile &other );
+		Tile	&operator= ( const Tile &other );
 
 		// Setters - Getters
-		void	setCoords( const Coords _C  );
-		void	setType( const int _T );
+		void	setCoords(	const Coords _C  );
+		void	setType(	const int _T );
 
-		const Coords	getCoords( void ) const;
-		int				getType( void ) const;
+		const Coords	getCoords(	void ) const;
+		int				getType(	void ) const;
 
-		void	setFFF( void );
-		bool	getFFF( void ) const;
-		void	resetFFF( void );
+		void	setFFF(		void );
+		bool	getFFF(		void ) const;
+		void	resetFFF(	void );
 
-		void	setFront( Tile *T );
-		void	setRight( Tile *T );
-		void	setTop( Tile *T );
-		void	setBack( Tile *T );
-		void	setLeft( Tile *T );
-		void	setBottom( Tile *T );
+		void	setFront(	Tile *T );
+		void	setRight(	Tile *T );
+		void	setTop(		Tile *T );
+		void	setBack(	Tile *T );
+		void	setLeft(	Tile *T );
+		void	setBottom(	Tile *T );
 
-		Tile	*getFront( void );
-		Tile	*getRight( void );
-		Tile	*getTop( void );
-		Tile	*getBack( void );
-		Tile	*getLeft( void );
-		Tile	*getBottom( void );
+		Tile	*getFront(	void );
+		Tile	*getRight(	void );
+		Tile	*getTop(	void );
+		Tile	*getBack(	void );
+		Tile	*getLeft(	void );
+		Tile	*getBottom(	void );
 
 		// Checkers
-		void	checkCoords( const Coords _C ) const;
-		void	checkType( const int _T) const;
-		bool	matchTile( const Tile &other ) const;
-		bool	matchCoords( const Coords _C ) const;
+		void	checkCoords(	const Coords _C ) const;
+		void	checkType(		const int _T) const;
+		bool	matchTile(		const Tile &other ) const;
+		bool	matchCoords(	const Coords _C ) const;
 
 		// Others
 		void	printTile( void );
 
 };
 
-std::ostream &operator<< (std::ostream &out, const Tile &rhs);
+std::ostream	&operator<< (std::ostream &out, const Tile &rhs);
 
 #endif // TILE_HPP
