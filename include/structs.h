@@ -6,12 +6,14 @@
 /*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2024/04/11 15:05:35 by llord            ###   ########.fr       */
+/*   Updated: 2024/04/21 16:53:39 by llord            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
+
+# include "../MLX42/include/MLX42/MLX42.h"
 
 // ======== STRUCTS ======== //
 
@@ -104,6 +106,7 @@ typedef struct s_slice
 typedef struct s_data
 {
 	int				master_state;
+	long			frame_count;
 
 	char			*level;
 	int				map_start;

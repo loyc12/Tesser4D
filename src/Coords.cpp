@@ -4,32 +4,32 @@
 
 Coords::Coords()
 {
-	std::cout << "[ Called def. constr. for a COORDS instance ]\n";
+	DEBUG( std::cout << "[ Called def. constr. for a COORDS instance ]\n"; )
 	this->X = 0;
 	this->Y = 0;
 	this->Z = 0;
 }
 Coords::Coords( int X, int Y, int Z )
 {
-	std::cout << "[ Called param. constr. for a COORDS instance ]\n";
+	DEBUG( std::cout << "[ Called param. constr. for a COORDS instance ]\n"; )
 	this->X = X;
 	this->Y = Y;
 	this->Z = Z;
 }
 Coords::Coords( const Coords &other )
 {
-	std::cout << "[ Called copy constr. for a COORDS instance ]\n";
+	DEBUG( std::cout << "[ Called copy constr. for a COORDS instance ]\n"; )
 	this->X = other.getX();
 	this->Y = other.getY();
 	this->Z = other.getZ();
 }
-Coords::~Coords() { std::cout << "[ Destroying a COORDS instance ]\n"; }
+Coords::~Coords() { DEBUG( std::cout << "[ Destroying a COORDS instance ]\n"; )}
 
 // Operators
 
 Coords &Coords::operator= ( const Coords &other )
 {
-	std::cout << "[ Called assign. op. for a COORDS instance ]\n";
+	DEBUG( std::cout << "[ Called assign. op. for a COORDS instance ]\n"; )
 	this->X = other.getX();
 	this->Y = other.getY();
 	this->Z = other.getZ();
@@ -55,14 +55,8 @@ int		Coords::getZ( void ) const { return ( this->Z ); }
 
 // Checkers
 
-bool	Coords::checkPos() const
-{
-	return ( this->X >= 0 && this->Y >= 0 && this->Z >= 0 ); // NOTE: check world dimensions instead
-}
-bool	Coords::matchPos( const Coords &other ) const
-{
-	return ( this->X == other.getX() && this->Y == other.getY() && this->Z == other.getZ() );
-}
+bool	Coords::checkPos() const { return ( this->X >= 0 && this->Y >= 0 && this->Z >= 0 ); } // NOTE: check world dimensions instead
+bool	Coords::matchPos( const Coords &other ) const { return ( this->X == other.getX() && this->Y == other.getY() && this->Z == other.getZ() ); }
 
 // Others
 

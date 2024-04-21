@@ -1,12 +1,7 @@
 #ifndef TILE_HPP
 # define TILE_HPP
 
-# include <exception>
-# include <iostream>
-# include <iomanip>
-# include <sstream>
-# include <string>
-
+# include "Default_Libs.hpp"
 # include "Coords.hpp"
 
 class Tile

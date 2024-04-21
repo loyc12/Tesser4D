@@ -6,7 +6,7 @@
 /*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2024/04/11 14:51:50 by llord            ###   ########.fr       */
+/*   Updated: 2024/04/21 16:31:31 by llord            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@
 
 # define elif else if
 # define byte unsigned char
+
+# define DEBUG_MODE true
+# define DEBUG( x ) if ( DEBUG_MODE ) { x }
 
 // ======== CONSTANTS ======== //
 

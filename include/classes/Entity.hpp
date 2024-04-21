@@ -1,11 +1,7 @@
 #ifndef ENTITY_HPP
 # define ENTITY_HPP
 
-# include <exception>
-# include <iostream>
-# include <iomanip>
-# include <sstream>
-# include <string>
+# include "Default_Libs.hpp"
 
 
 #endif // ENTITY_HPP

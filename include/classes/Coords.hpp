@@ -1,11 +1,7 @@
 #ifndef COORDS_HPP
 # define COORDS_HPP
 
-# include <exception>
-# include <iostream>
-# include <iomanip>
-# include <sstream>
-# include <string>
+# include "Default_Libs.hpp"
 
 class Coords
 {

@@ -20,14 +20,13 @@ INCDIRS		=	include/ \
 
 # Directory names
 SRCDIR		=	src/
-OBJDIR		=	obj/
-#TSTDIR		=	tests
-#SUBDIRS	=	example
+OBJDIR		=	bin/
+#TSTDIR		=	test/
+#SUBDIRS	=	example/
 
 # Libraries (.a files) to include for compilation
-LIBS		= ./MLX42/build/libmlx42.a \
-
-LIBS		+= -lglfw -L "/Users/$$USER/homebrew/opt/glfw/lib/" \
+LIBS		=	./MLX42/build/libmlx42.a \
+				-lglfw -L "/Users/$$USER/homebrew/opt/glfw/lib/" \
 
 # Arguments to call the command with
 ARGS		=
