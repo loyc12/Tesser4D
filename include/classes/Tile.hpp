@@ -56,12 +56,12 @@ class Tile
 		void	setFlag( void );
 		void	setDirs( Tile *Front, Tile *Right, Tile *Top, Tile *Back, Tile *Left, Tile *Bottom );
 
-		void	setFront(  Tile *T );
-		void	setRight(  Tile *T );
-		void	setTop(    Tile *T );
-		void	setBack(   Tile *T );
-		void	setLeft(   Tile *T );
-		void	setBottom( Tile *T );
+		void	setFront(  Tile *tile );
+		void	setRight(  Tile *tile );
+		void	setTop(    Tile *tile );
+		void	setBack(   Tile *tile );
+		void	setLeft(   Tile *tile );
+		void	setBottom( Tile *tile );
 
 		// Getters
 		Coords	getCoords( void ) const;

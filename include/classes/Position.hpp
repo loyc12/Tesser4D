@@ -3,6 +3,7 @@
 
 # include "Default_Libs.hpp"
 
+class Coords;
 # include "Coords.hpp"
 
 class Position

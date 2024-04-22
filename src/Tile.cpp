@@ -86,12 +86,12 @@ void	Tile::setDirs( Tile *Front, Tile *Right, Tile *Top, Tile *Back, Tile *Left,
 	this->setBottom( Bottom );
 }
 
-void	Tile::setFront(  Tile *T ) { this->front = T; }
-void	Tile::setRight(  Tile *T ) { this->right = T; }
-void	Tile::setTop(    Tile *T ) { this->top = T; }
-void	Tile::setBack(   Tile *T ) { this->back = T; }
-void	Tile::setLeft(   Tile *T ) { this->left = T; }
-void	Tile::setBottom( Tile *T ) { this->bottom = T; }
+void	Tile::setFront(  Tile *tile ) { this->front = tile; }
+void	Tile::setRight(  Tile *tile ) { this->right = tile; }
+void	Tile::setTop(    Tile *tile ) { this->top = tile; }
+void	Tile::setBack(   Tile *tile ) { this->back = tile; }
+void	Tile::setLeft(   Tile *tile ) { this->left = tile; }
+void	Tile::setBottom( Tile *tile ) { this->bottom = tile; }
 
 // Getters
 Coords	Tile::getCoords( void ) const { return ( this->C ); }

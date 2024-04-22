@@ -7,12 +7,13 @@ NAME		=	TESSER4D
 
 # Source file names (prefix their subdir if needed)
 SRCFILES	=	main \
-				Ray \
-				Tile \
-				Screen \
-				Entity \
 				Coords \
+				Entity \
+				Game \
 				Position \
+				Ray \
+				Screen \
+				Tile \
 
 # Include directory paths
 INCDIRS		=	include/ \
