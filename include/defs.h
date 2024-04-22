@@ -1,17 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2024/04/21 17:08:38 by llord            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Creator: Loyc12
 
 #ifndef DEFS_H
 # define DEFS_H
+
+# define DEBUG_MODE true
 
 // ======== DEFINITIONS ======== //
 
@@ -39,16 +31,13 @@
 # define ADRS	( void** )&
 # define ADRS2	( void***) &
 
-// BYTE PER PIXEL, = sizeof(int32_t)
-# define BPP	4
+# define BPP = 4 // sizeof( int32_t )
 
 # define elif	else if
 # define byte	unsigned char
 
-# define XCPT( x )	public std::exception { public: virtual const char *what() const throw() { return x; } }
-
-# define DEBUG_MODE true
-# define DEBUG( x )	if ( DEBUG_MODE ) { x }
+# define DEBUG( x )	if ( DEBUG_MODE ) { x; }
+# define XCPT( x )	public std::exception { public: virtual const char *what() const throw() { return x; }}
 
 // ======== CONSTANTS ======== //
 
@@ -75,5 +64,9 @@
 # define SHADE_FACTOR	( double )0.66 //	(0 to 1)	floor/ceiling shading strenght
 # define INV_SHADE_C	( int )1 //			(0 or 1)	(inverted ceiling shading creates a better sky effect)
 # define INV_SHADE_F	( int )0 //			(0 or 1)
+
+// WORLD
+
+# define MAX_MAP_SIZE	( int )64
 
 #endif // DEFS_H

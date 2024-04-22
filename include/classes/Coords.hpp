@@ -3,6 +3,8 @@
 
 # include "Default_Libs.hpp"
 
+# include "Position.hpp"
+
 class Coords
 {
 	private:
@@ -12,42 +14,51 @@ class Coords
 		int	Z;
 
 	protected:
-
 		// Nested Classes
-		class BadValiue : public std::exception
-		{
-			public:
-				virtual const char *what() const throw() { return "Coord error : invalid value"; }
-		};
+		class BadInit : XCPT( "Coords error : failed to initialise"; );
 
 	public:
-		// Constructors - Destructor
-		Coords();
-		Coords( int _X, int _Y, int _Z);
-		Coords( const Coords &other );
+		// Destructor
 		~Coords();
 
-		// Operators
+		// Constructors
+		Coords();
+		Coords( int _X, int _Y, int _Z );
+		Coords( const Position _P );
+
+		// Reconstructors
+		Coords( const Coords &other );
 		Coords &operator= ( const Coords &other );
 
-		// Setters - Getters
+		// Clearers
+		void	clearX( void );
+		void	clearY( void );
+		void	clearZ( void );
+		void 	clearCoords( void );
+
+		// Setters
 		void	setX( int _X );
 		void	setY( int _Y );
 		void	setZ( int _Z );
+		void	setCoords( int _X, int _Y, int _Z );
 
+		// Getters
 		int		getX( void ) const;
 		int		getY( void ) const;
 		int		getZ( void ) const;
 
-		// Checkers
-		bool	checkPos() const;
-		bool	matchPos( const Coords &other ) const;
+		// Fetchers
 
-		// Others
-		void	printPos( void ) const;
+		// Checkers
+		bool	checkCoords() const;
+		bool	matchCoords( const Coords &other ) const;
+
+		// writters
+		void	writeCoords( std::ostream &out ) const;
+		void	printCoords( void ) const;
+
+		friend	std::ostream &operator<<( std::ostream &out, const Coords &rhs );
 
 };
-
-std::ostream &operator<< (std::ostream &out, const Coords &rhs);
 
 #endif // COORDS_HPP

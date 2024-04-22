@@ -16,9 +16,7 @@
 // ======== LIBRARIES ======== //
 
 # include "Default_Libs.hpp"
-
 # include "Game.hpp"
-
 
 #endif // T4D_H
 

@@ -6,7 +6,7 @@
 /*   By: llord <llord@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:56:01 by llord             #+#    #+#             */
-/*   Updated: 2024/04/21 16:51:44 by llord            ###   ########.fr       */
+/*   Updated: 2024/04/22 15:17:30 by llord            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ typedef enum e_gstate
 	GSTATE_ERROR	= -1,
 	GSTATE_STARTING	= 0,
 	GSTATE_RUNNING	= 1,
-	GSTATE_ENDING	= 2
-}			t_mstate;
+	GSTATE_ENDING	= 2,
+	GSTATE_MAX		= 2
+}					t_mstate;
 
 //direction ID (
 typedef enum e_did
@@ -36,7 +37,8 @@ typedef enum e_did
 	DID_BACK	= 3,
 	DID_LEFT	= 4,
 	DID_BOTTOM	= 5,
-}			t_tid;
+	DID_MAX		= 5
+}				t_tid;
 
 //tile type (how should we interact/display this tile)
 typedef enum e_ttype
@@ -44,6 +46,7 @@ typedef enum e_ttype
 	TTYPE_ERROR	= -1,
 	TTYPE_VOID	= 0,
 	TTYPE_FULL	= 1,
-}			t_ttype;
+	TTYPE_MAX	= 1
+}				t_ttype;
 
 #endif //	ENUMS_H
