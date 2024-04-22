@@ -29,7 +29,7 @@
 # define PTR	( void* )
 # define PTR2	( void** )
 # define ADRS	( void** )&
-# define ADRS2	( void***) &
+# define ADRS2	( void*** )&
 
 # define BPP = 4 // sizeof( int32_t )
 

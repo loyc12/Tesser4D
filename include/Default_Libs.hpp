@@ -9,13 +9,6 @@
 # include <sstream>
 # include <string>
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <time.h>
-# include <math.h>
-
 # include "defs.h"
 # include "enums.h"
 # include "structs.h"

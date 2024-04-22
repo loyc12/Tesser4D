@@ -1,5 +1,12 @@
 #include "T4D.hpp"
 
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <time.h>
+# include <math.h>
+
 // initializes the game data
 void init_data( t_data *d )
 {
