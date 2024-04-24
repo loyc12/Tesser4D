@@ -1,18 +1,18 @@
 # include "Entity.hpp"
 
 // Destructor
-Entity::~Entity() { DEBUG( std::cout << "[ Destroying an ENTITY instance ]\n" ); }
+Entity::~Entity() {} //{ DEBUG( std::cout << "[ Destroying an ENTITY instance ]\n" ); }
 
 // Constructors
 Entity::Entity()
 {
-	DEBUG( std::cout << "[ Called def. constr. for an ENTITY instance ]\n" );
+	//DEBUG( std::cout << "[ Called def. constr. for an ENTITY instance ]\n" );
 	this->pos = Position( 0, 0, 0 );
 	this->tile = Tile();
 }
 Entity::Entity( const Position _pos, const Tile _tile )
 {
-	DEBUG( std::cout << "[ Called param. constr. for an ENTITY instance ]\n" );
+	//DEBUG( std::cout << "[ Called param. constr. for an ENTITY instance ]\n" );
 	this->pos = _pos;
 	this->tile = _tile;
 }
@@ -20,13 +20,13 @@ Entity::Entity( const Position _pos, const Tile _tile )
 // Reconstructors
 Entity::Entity( const Entity &other )
 {
-	DEBUG( std::cout << "[ Called copy constr. for an ENTITY instance ]\n" );
+	//DEBUG( std::cout << "[ Called copy constr. for an ENTITY instance ]\n" );
 	this->pos = other.getPos();
 	this->tile = other.getTile();
 }
 Entity &Entity::operator= ( const Entity &other )
 {
-	DEBUG( std::cout << "[ Called assign. op. for an ENTITY instance ]\n" );
+	//DEBUG( std::cout << "[ Called assign. op. for an ENTITY instance ]\n" );
 	this->pos = other.getPos();
 	this->tile = other.getTile();
 	return *this;

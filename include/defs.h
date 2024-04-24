@@ -5,39 +5,59 @@
 
 # define DEBUG_MODE true
 
-// ======== DEFINITIONS ======== //
-
-// ERROR FILE
-# define ERR_ARG_COUNT	"Input Error : Invalid argument count"
-# define ERR_FILE_LEVEL	"File Error : Invalid level file path"
-# define ERR_FILE_ASSET	"File Error : Invalid asset file path"
-# define ERR_FILE_CUBE	"File Error : Level file is not a .cub"
-# define ERR_FILE_PNG	"File Error : Asset file is not a .png"
-# define ERR_FILE_SIZE	"File Error : Level file is too large"
-# define ERR_FILE_SPECS	"File Error : Level specification missing"
-# define ERR_FILE_COLOR	"File Error : Invalid colour code"
-
-// ERROR MAP
-# define ERR_MAP_SIZE	"Map Error : Map is too large"
-# define ERR_MAP_PLAYER	"Map Error : Map has an invalid number or players"
-# define ERR_MAP_CHAR	"Map Error : Map uses invalid symbols"
-# define ERR_MAP_BOUND	"MAP Error : Map is not enclosed"
 
 // ======== SHORTCUTS ======== //
 
-// POINTERS
-# define PTR	( void* )
-# define PTR2	( void** )
-# define ADRS	( void** )&
-# define ADRS2	( void*** )&
-
-# define BPP = 4 // sizeof( int32_t )
-
+// Redefs
 # define elif	else if
 # define byte	unsigned char
+# define str	std::string
 
+// Snipets
 # define DEBUG( x )	if ( DEBUG_MODE ) { x; }
 # define XCPT( x )	public std::exception { public: virtual const char *what() const throw() { return x; }}
+
+# define RELEASED( keydata, match )	( keydata.key == match && keydata.action == MLX_RELEASE )
+# define PRESSED( keydata, match )	( keydata.key == match && keydata.action == MLX_PRESS )
+# define HELD( keydata, match )		( keydata.key == match && keydata.action == MLX_REPEAT )
+
+// ======== STRUCTS ======== //
+
+typedef struct s_colour
+{
+	byte	r;
+	byte	g;
+	byte	b;
+	byte	a;
+}			t_colour;
+
+// ======== ENUMS ======== //	t_gstate;
+
+//direction ID (
+typedef enum e_did
+{
+	DID_NONE	= -1,
+	DID_FRONT	= 0,
+	DID_RIGHT	= 1,
+	DID_TOP		= 2,
+	DID_BACK	= 3,
+	DID_LEFT	= 4,
+	DID_BOTTOM	= 5,
+	DID_COUNT		= 5
+}				t_tid;
+
+//tile type (how should we interact/display this tile)
+typedef enum e_ttype
+{
+	TTYPE_ERROR	= -1,
+	TTYPE_VOID	= 0,
+	TTYPE_FULL	= 1,
+	TTYPE_COUNT	= 1
+}				t_ttype;
+#endif // DEFS_H
+
+
+/*
 
 // ======== CONSTANTS ======== //
 
@@ -52,21 +72,12 @@
 # define PLAYER_RADIUS	( double )0.2
 # define ASSET_COUNT	( int )4 //			asset count
 
-// DISPLAY
-# define SCREEN_WIDTH	( int )1536
-# define SCREEN_HEIGHT	( int )1152
-# define PIXEL_SIZE		( int )4 //			(1 to 32)
-//# define COLOUR_DEF	( int)1 //			(1 to 32) slows rendering by ~10%
-
 // VIEW
+//# define COLOUR_DEF	( int)1 //			(1 to 32) slows rendering by ~10%
 # define PLAYER_FOV		( double )70 //		(10 to 100)	field of view
 # define SHADE_DISTANCE	( double )32 //		(0 to 100)	wall shading distance (inverse strenght)
 # define SHADE_FACTOR	( double )0.66 //	(0 to 1)	floor/ceiling shading strenght
 # define INV_SHADE_C	( int )1 //			(0 or 1)	(inverted ceiling shading creates a better sky effect)
 # define INV_SHADE_F	( int )0 //			(0 or 1)
 
-// WORLD
-
-# define MAX_MAP_SIZE	( int )64
-
-#endif // DEFS_H
+*/

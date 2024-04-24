@@ -10,10 +10,12 @@ SRCFILES	=	main \
 				Coords \
 				Entity \
 				Game \
+				GameLoop \
 				Position \
 				Ray \
 				Screen \
 				Tile \
+				Addons \
 
 # Include directory paths
 INCDIRS		=	include/ \

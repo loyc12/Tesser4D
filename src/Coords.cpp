@@ -1,34 +1,34 @@
 #include "Coords.hpp"
 
 // Destructor
-Coords::~Coords() { DEBUG( std::cout << "[ Destroying a COORDS instance ]\n" ); }
+Coords::~Coords() {} //{ DEBUG( std::cout << "[ Destroying a COORDS instance ]\n" ); }
 
 // Constructors
 Coords::Coords()
 {
-	DEBUG( std::cout << "[ Called def. constr. for a COORDS instance ]\n" );
+	//DEBUG( std::cout << "[ Called def. constr. for a COORDS instance ]\n" );
 	this->X = 0;  this->Y = 0;  this->Z = 0;
 }
 Coords::Coords( int X, int Y, int Z )
 {
-	DEBUG( std::cout << "[ Called param. constr. for a COORDS instance ]\n" );
+	//DEBUG( std::cout << "[ Called param. constr. for a COORDS instance ]\n" );
 	this->X = X;  this->Y = Y;  this->Z = Z;
 }
 Coords::Coords( const Position P )
 {
-	DEBUG( std::cout << "[ Called param. constr. for a COORDS instance ]\n" );
+	//DEBUG( std::cout << "[ Called param. constr. for a COORDS instance ]\n" );
 	this->X = P.getX();  this->Y = P.getY();  this->Z = P.getZ();
 }
 
 // Reconstructors
 Coords::Coords( const Coords &other )
 {
-	DEBUG( std::cout << "[ Called copy constr. for a COORDS instance ]\n" );
+	//DEBUG( std::cout << "[ Called copy constr. for a COORDS instance ]\n" );
 	this->X = other.getX();  this->Y = other.getY();  this->Z = other.getZ();
 }
 Coords &Coords::operator= ( const Coords &other )
 {
-	DEBUG( std::cout << "[ Called assign. op. for a COORDS instance ]\n" );
+	//DEBUG( std::cout << "[ Called assign. op. for a COORDS instance ]\n" );
 	this->X = other.getX();  this->Y = other.getY();  this->Z = other.getZ();
 	return *this;
 }

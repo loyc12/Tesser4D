@@ -11,13 +11,6 @@ Game::Game()
 	this->screen = Screen();
 	this->clearMap();
 }
-Game::Game( const Screen _screen )
-{
-	DEBUG( std::cout << "[ Called param. constr. for a GAME instance ]\n" );
-	this->player = Entity();
-	this->screen = _screen;
-	this->clearMap();
-}
 
 // Reconstructors
 Game::Game( const Game &other )
@@ -69,12 +62,18 @@ void	Game::setMap( Tile ***_map )
 void	Game::setTile( const Coords _C, const Tile _tile ) { this->setTile( _C.getX(), _C.getY(), _C.getZ(), _tile ); }
 void	Game::setTile( int X, int Y, int Z, const Tile _tile ) { this->tileMap[ X ][ Y ][ Z ] = _tile; }
 
+void	Game::setHasUpdated( bool _hasUpdated ) { this->hasUpdated = _hasUpdated; }
+void	Game::setHasRendered( bool _hasRendered ) { this->hasRendered = _hasRendered; }
+
 // Getters
 Entity	Game::getPlayer( void ) const { return this->player; }
 Screen	Game::getScreen( void ) const { return this->screen; }
 
 Tile	Game::getTile( const Coords _C ) const { return this->getTile( _C.getX(), _C.getY(), _C.getZ() ); }
 Tile	Game::getTile( int X, int Y, int Z ) const { return this->tileMap[ X ][ Y ][ Z ]; }
+
+bool	Game::getHasUpdated( void ) { return this->hasUpdated; }
+bool	Game::getHasRendered( void ) { return this->hasRendered; }
 
 // Fetchers
 Entity	&Game::fetchPlayer( void ) { return this->player; }
@@ -116,6 +115,32 @@ void	Game::printGame( void ) const { this->writeGame( std::cout ); }
 void    Game::printMap( void ) const { this->writeMap( std::cout ); }
 
 std::ostream &operator<<( std::ostream &out, const Game &rhs ) { rhs.writeGame( out );  return out; }
+
+// Others
+void	Game::initScreen( int width, int height )
+{
+	this->screen.setDims( width, height );
+	this->screen.initWindow();
+}
+void	Game::initMap( str mapFile )
+{
+	( void )mapFile;
+}
+void	Game::initPlayer( void )
+{
+	// this->player = Entity();
+}
+
+void	Game::quitGame( void )
+{
+	DEBUG( std::cout << "\nending game loop" << std::endl; )
+
+	mlx_terminate( this->screen.fetchWindow() );
+	this->clearGame();
+
+	DEBUG( std::cout << "quitting..." << std::endl; )
+	exit( 0 );
+}
 
 
 

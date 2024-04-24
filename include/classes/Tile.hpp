@@ -1,7 +1,7 @@
 #ifndef TILE_HPP
 # define TILE_HPP
 
-# include "Default_Libs.hpp"
+# include "DefLibs.hpp"
 # include "Coords.hpp"
 
 class Tile

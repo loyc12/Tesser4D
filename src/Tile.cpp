@@ -1,47 +1,47 @@
 #include "Tile.hpp"
 
 // Destructor
-Tile::~Tile() { DEBUG( std::cout << "[ Destroying a TILE instance ]\n" ); }
+Tile::~Tile() {} //{ DEBUG( std::cout << "[ Destroying a TILE instance ]\n" ); }
 
 // Constructors
 Tile::Tile()
 {
-	DEBUG( std::cout << "[ Called def. constr. for a TILE instance ]\n" );
+	//DEBUG( std::cout << "[ Called def. constr. for a TILE instance ]\n" );
 	this->C = Coords( 0, 0, 0 );
 	this->T = 0;
 	this->flag = false;
 }
 Tile::Tile( int _T )
 {
-	DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
+	//DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
 	this->C = Coords( 0, 0, 0 );
 	this->T = _T;
 	this->flag = false;
 }
 Tile::Tile( int X, int Y, int Z )
 {
-	DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
+	//DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
 	this->C = Coords( X, Y, Z );
 	this->T = 0;
 	this->flag = false;
 }
 Tile::Tile( int X, int Y, int Z, int _T)
 {
-	DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
+	//DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
 	this->C = Coords( X, Y, Z );
 	this->T = _T;
 	this->flag = false;
 }
 Tile::Tile( const Coords _C )
 {
-	DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
+	//DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
 	this->C = _C;
 	this->T = 0;
 	this->flag = false;
 }
 Tile::Tile( const Coords _C, int _T )
 {
-	DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
+	//DEBUG( std::cout << "[ Called param. constr. for a TILE instance ]\n" );
 	this->C = _C;
 	this->T = _T;
 	this->flag = false;
@@ -50,13 +50,13 @@ Tile::Tile( const Coords _C, int _T )
 // Reconstructors
 Tile::Tile( const Tile &other )
 {
-	DEBUG( std::cout << "[ Called copy constr. for a TILE instance ]\n" );
+	//DEBUG( std::cout << "[ Called copy constr. for a TILE instance ]\n" );
 	this->C = other.getCoords();
 	this->T = other.getType();
 }
 Tile &Tile::operator= ( const Tile &other )
 {
-	DEBUG( std::cout << "[ Called assign. op. for a TILE instance ]\n" );
+	//DEBUG( std::cout << "[ Called assign. op. for a TILE instance ]\n" );
 	this->C = other.getCoords();
 	this->T = other.getType();
 	return *this;

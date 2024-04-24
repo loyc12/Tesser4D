@@ -1,5 +1,5 @@
-#ifndef DEFAULT_LIBS_HPP
-# define DEFAULT_LIBS_HPP
+#ifndef DefLibs_HPP
+# define DefLibs_HPP
 
 # include "../MLX42/include/MLX42/MLX42.h"
 
@@ -10,7 +10,7 @@
 # include <string>
 
 # include "defs.h"
-# include "enums.h"
-# include "structs.h"
+# include "Addons.hpp"
 
-#endif // DEFAULT_LIBS_HPP
+
+#endif // DefLibs_HPP

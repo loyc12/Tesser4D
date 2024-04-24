@@ -15,22 +15,23 @@
 
 // ======== LIBRARIES ======== //
 
-# include "Default_Libs.hpp"
+# include "DefLibs.hpp"
+
+# include "Coords.hpp"
+# include "Tile.hpp"
+
+# include "Position.hpp"
+# include "Entity.hpp"
+
+# include "Ray.hpp"
+# include "Screen.hpp"
 # include "Game.hpp"
 
 #endif // T4D_H
 
 /*
 
-	0======== IDEAS ========0
+0======== IDEAS ========0
 
-attach current tile to entities/player
-prevent placing tiles on entities
-be able to place walls on non-tiles (map borders)
-respawn in proper direction
-use mouse to turn cameras
-add a minimap
-add music & sounds
-give voids its own texture
 
 */
