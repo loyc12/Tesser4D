@@ -80,7 +80,6 @@ void	Screen::initCanvas( void )
 		throw Screen::BadCanvas();
 	this->fillCanvas( makeColour( 0x00, 0x00, 0x00 ));
 }
-
 void	Screen::initWindow( void )
 {
 	this->window = mlx_init( ( int32_t )this->width, ( int32_t )this->height, TITLE, true );
