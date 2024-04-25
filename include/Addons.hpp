@@ -10,4 +10,7 @@ uint32_t	convColour( byte r, byte g, byte b, byte a );
 t_colour	makeColour( byte r, byte g, byte b );
 t_colour	makeColour( byte r, byte g, byte b, byte a );
 
+// Debug Addons
+uint32_t getNextColour( void );
+
 #endif //	ADDONS_HPP

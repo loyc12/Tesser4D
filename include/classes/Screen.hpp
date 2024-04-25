@@ -2,9 +2,11 @@
 # define SCREEN_HPP
 
 # include "DefLibs.hpp"
+# include "Colours.hpp"
 
 # define MPX_SIZE	( int )4
 # define TITLE		( char* )"Screen Test"
+# define BPP		( int )4 // byte per pixel
 
 class Screen
 {
@@ -62,18 +64,26 @@ class Screen
 		bool	checkScreen( void ) const;
 		bool	checkDims( void ) const;
 
-		// writters
+		// Writters
 		void	writeScreen( std::ostream &out ) const;
 		void	printScreen( void ) const;
 
 		friend	std::ostream &operator<<( std::ostream &out, const Screen &rhs );
 
+		// Drawers
+
+		void	drawRect( int w, int h, int _width, int _height, const t_colour &colour );
+		void	drawRect( int w, int h, int _width, int _height, uint32_t colour );
+
+		void	fillCanvas( const t_colour &colour );
+		void	fillCanvas( uint32_t colour );
+
+		void	drawMPixel( int w, int h, const t_colour &colour );
+		void	drawMPixel( int w, int h, uint32_t colour );
+
 		// Others
-		void	drawRect( int w, int h, int _width, int _height, t_colour colour );
-		void	fillCanvas( t_colour colour );
-		void	drawMPixel( int w, int h, t_colour colour );
-		void	initCanvas( void );
 		void	initWindow( void );
+		void	initCanvas( void );
 
 };
 

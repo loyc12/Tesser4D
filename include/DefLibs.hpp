@@ -9,7 +9,10 @@
 # include <sstream>
 # include <string>
 
+# include "unistd.h"
+
 # include "defs.h"
+# include "Colours.hpp"
 # include "Addons.hpp"
 
 

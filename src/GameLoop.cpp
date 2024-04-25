@@ -6,8 +6,8 @@ void loop_hook( void *param )
 	Game *g = ( Game* )param;
 	( void )g;
 
-	g->updateGame();
 	g->renderGame();
+	g->updateGame();
 }
 
 //interpret key signals during the gama loop
@@ -57,6 +57,8 @@ void	Game::updateGame( void )
 		//DEBUG( std::cout << "updating game" << std::endl; )
 
 		this->hasUpdated = true;
+		this->screen.fillCanvas( getNextColour() );
+		usleep( 333333 );
 		this->hasRendered = false;
 	}
 }

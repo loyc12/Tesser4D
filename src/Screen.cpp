@@ -52,38 +52,46 @@ mlx_image_t	*Screen::fetchCanvas( void ) { return ( this->canvas ); }
 
 // Checkers
 bool	Screen::checkScreen( void ) const { return ( this->checkDims() ); }
-bool	Screen::checkDims( void ) const { return ( this->width > 0 && this->height > 0 ); }
+bool	Screen::checkDims( void ) const { return ( this->width > 0 && this->height > 0 ); } // WIP
 
-// writters
+// Writters
 void	Screen::writeScreen( std::ostream &out ) const { out << "[ " << this->width << " : " << this->height << " ]"; }
 void	Screen::printScreen( void ) const { this->writeScreen( std::cout );  std::cout << std::endl; }
 std::ostream &operator<<( std::ostream &out, const Screen &rhs ) { rhs.writeScreen( out );  return out; }
 
-// Others
-void	Screen::drawRect( int w, int h, int _width, int _height, t_colour colour )
+// Drawers
+void	Screen::drawRect( int w, int h, int _width, int _height, const t_colour &colour ) { this->drawRect( w, h, _width, _height, convColour( colour )); }
+void	Screen::drawRect( int w, int h, int _width, int _height, uint32_t colour )
 {
 	for ( int i = 0; i < _width; i++ )
 		for ( int j = 0; j < _height; j++ )
-			mlx_put_pixel( this->canvas, w + i, h + j, convColour( colour ));
+			mlx_put_pixel( this->canvas, w + i, h + j, colour);
 }
-void	Screen::fillCanvas( t_colour colour )
+
+void	Screen::fillCanvas( const t_colour &colour ) { this->fillCanvas( convColour( colour )); }
+void	Screen::fillCanvas( uint32_t colour ) // Fill the canvas with a single colour ( via direct memory manipulation )
 {
-	for ( int h = 0; h < ( int )this->canvas->height; h++ )
-		for ( int w = 0; w < ( int )this->canvas->width; w++ )
-			mlx_put_pixel( this->canvas, w, h, convColour( colour ));
+	this->drawRect( 0, 0, this->window->width, this->window->height, colour );
 }
-void	Screen::drawMPixel( int w, int h, t_colour colour ) { this->drawRect( w, h, MPX_SIZE, MPX_SIZE, colour ); }
-void	Screen::initCanvas( void )
-{
-	this->canvas = mlx_new_image( this->window, this->window->width, this->window->height );
-	if ( this->canvas == nullptr )
-		throw Screen::BadCanvas();
-	this->fillCanvas( makeColour( 0x00, 0x00, 0x00 ));
-}
+
+void	Screen::drawMPixel( int w, int h, const t_colour &colour ) { this->drawMPixel( w, h, convColour( colour )); }
+void	Screen::drawMPixel( int w, int h, uint32_t colour ) { this->drawRect( w, h, MPX_SIZE, MPX_SIZE, colour ); }
+
+// Others
 void	Screen::initWindow( void )
 {
 	this->window = mlx_init( ( int32_t )this->width, ( int32_t )this->height, TITLE, true );
 	if ( this->window == nullptr )
 		throw Screen::BadWindow();
+
 	this->initCanvas();
+}
+void	Screen::initCanvas( void )
+{
+	this->canvas = mlx_new_image( this->window, this->window->width, this->window->height );
+	if ( this->canvas == nullptr )
+		throw Screen::BadCanvas();
+
+	this->fillCanvas( C_WHITE );
+	mlx_image_to_window( this->window, this->canvas, 0, 0 );
 }

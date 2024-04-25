@@ -12,6 +12,7 @@
 # define elif	else if
 # define byte	unsigned char
 # define str	std::string
+# define cstr	const char *
 
 // Snipets
 # define DEBUG( x )	if ( DEBUG_MODE ) { x; }
@@ -20,6 +21,9 @@
 # define RELEASED( keydata, match )	( keydata.key == match && keydata.action == MLX_RELEASE )
 # define PRESSED( keydata, match )	( keydata.key == match && keydata.action == MLX_PRESS )
 # define HELD( keydata, match )		( keydata.key == match && keydata.action == MLX_REPEAT )
+
+// ======== CONSTANTS ======== //
+
 
 // ======== STRUCTS ======== //
 

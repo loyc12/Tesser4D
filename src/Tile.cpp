@@ -63,7 +63,7 @@ Tile &Tile::operator= ( const Tile &other )
 }
 
 // Checkers
-bool	Tile::checkTile( void ) const { return ( this->C.checkCoords() && this->T >= TTYPE_VOID && this->T <= TTYPE_MAX ); }
+bool	Tile::checkTile( void ) const { return ( this->C.checkCoords() && this->T >= TTYPE_VOID && this->T <= TTYPE_COUNT ); }
 bool	Tile::matchTile( const Tile &other ) const { return ( this->C.matchCoords( other.getCoords() ) && this->T == other.getType() ); }
 
 // Clearers
