@@ -81,7 +81,7 @@ class Tile
 		bool	checkTile( void ) const;
 		bool	matchTile( const Tile &other ) const;
 
-		// writters
+		// Writers
 		void	writeTile( std::ostream &out ) const;
 		void	printTile( void ) const;
 

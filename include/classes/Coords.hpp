@@ -54,7 +54,7 @@ class Coords
 		bool	checkCoords() const;
 		bool	matchCoords( const Coords &other ) const;
 
-		// writters
+		// Writers
 		void	writeCoords( std::ostream &out ) const;
 		void	printCoords( void ) const;
 

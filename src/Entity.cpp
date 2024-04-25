@@ -51,7 +51,7 @@ Tile		&Entity::fetchTile( void ) { return ( this->tile ); }
 // Checkers
 bool	Entity::checkEntity( void ) const { return ( this->pos.checkPos() && this->tile.checkTile() ); }
 
-// writters
+// Writers
 void	Entity::writeEntity( std::ostream &out ) const
 {
 	out << "[ ";

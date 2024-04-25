@@ -49,7 +49,7 @@ double	Position::getZ( void ) const { return ( this->z ); }
 bool	Position::checkPos() const { return ( this->x >= 0 && this->y >= 0 && this->z >= 0 ); } // TODO : check with world dimensions instead
 bool	Position::matchPos( const Position &other ) const { return ( this->x == other.getX() && this->y == other.getY() && this->z == other.getZ() ); }
 
-// writters
+// Writers
 void	Position::writePos( std::ostream &out ) const { out << "[ " << this->x << " : " << this->y << " : " << this->z << " ]"; }
 void	Position::printPos( void ) const { this->writePos( std::cout );  std::cout << std::endl; }
 std::ostream &operator<<( std::ostream &out, const Position &rhs ) { rhs.writePos( out );  return out; }

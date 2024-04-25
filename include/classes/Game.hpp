@@ -7,7 +7,7 @@
 # include "Entity.hpp"
 # include "Screen.hpp"
 
-# define MAX_MAP_SIZE	( int )64
+# define MAX_MAP_SIZE	( int )32
 
 class Game
 {
@@ -78,7 +78,7 @@ class Game
 
 		// Checkers
 
-		// writters
+		// Writers
 		void	writeGame( std::ostream &out ) const;
 		void	writeMap( std::ostream &out ) const;
 

@@ -64,7 +64,7 @@ class Screen
 		bool	checkScreen( void ) const;
 		bool	checkDims( void ) const;
 
-		// Writters
+		// Writers
 		void	writeScreen( std::ostream &out ) const;
 		void	printScreen( void ) const;
 

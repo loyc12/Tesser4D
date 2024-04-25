@@ -49,7 +49,7 @@ int		Coords::getZ( void ) const { return ( this->Z ); }
 bool	Coords::checkCoords() const { return ( this->X >= 0 && this->Y >= 0 && this->Z >= 0 ); } // TODO : check with world dimensions instead
 bool	Coords::matchCoords( const Coords &other ) const { return ( this->X == other.getX() && this->Y == other.getY() && this->Z == other.getZ() ); }
 
-// writters
+// Writers
 void	Coords::writeCoords( std::ostream &out ) const { out << "[ " << this->X << " : " << this->Y << " : " << this->Z << " ]"; }
 void	Coords::printCoords( void ) const { this->writeCoords( std::cout );  std::cout << std::endl; }
 std::ostream &operator<<( std::ostream &out, const Coords &rhs ) { rhs.writeCoords( out );  return out; }

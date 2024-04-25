@@ -107,7 +107,7 @@ Tile	*Tile::fetchBack(   void ) { return ( this->back ); }
 Tile	*Tile::fetchLeft(   void ) { return ( this->left ); }
 Tile	*Tile::fetchBottom( void ) { return ( this->bottom ); }
 
-// writters
+// Writers
 void	Tile::writeTile( std::ostream &out ) const
 {
 	out << "[ ";

@@ -50,7 +50,7 @@ class Ray
 		// Checkers
 		bool	checkRay( void ) const;
 
-		// writters
+		// Writers
 		void	writeRay( std::ostream &out ) const;
 		void	printRay( void ) const;
 

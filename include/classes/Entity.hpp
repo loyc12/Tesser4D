@@ -49,7 +49,7 @@ class Entity
 		// Checkers
 		bool	checkEntity( void ) const;
 
-		// writters
+		// Writers
 		void	writeEntity( std::ostream &out ) const;
 		void	printEntity( void ) const;
 

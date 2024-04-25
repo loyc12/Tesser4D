@@ -85,7 +85,7 @@ Tile	&Game::fetchTile( int X, int Y, int Z ) { return this->tileMap[ X ][ Y ][ Z
 
 // Checkers
 
-// writters
+// Writers
 void	Game::writeGame( std::ostream &out ) const
 {
 	out << "[ ";

@@ -54,7 +54,7 @@ class Position
 		bool	checkPos( void ) const;
 		bool	matchPos( const Position &other ) const;
 
-		// writters
+		// Writers
 		void	writePos( std::ostream &out ) const;
 		void	printPos( void ) const;
 

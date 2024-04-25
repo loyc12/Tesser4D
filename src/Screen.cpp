@@ -54,7 +54,7 @@ mlx_image_t	*Screen::fetchCanvas( void ) { return ( this->canvas ); }
 bool	Screen::checkScreen( void ) const { return ( this->checkDims() ); }
 bool	Screen::checkDims( void ) const { return ( this->width > 0 && this->height > 0 ); } // WIP
 
-// Writters
+// Writers
 void	Screen::writeScreen( std::ostream &out ) const { out << "[ " << this->width << " : " << this->height << " ]"; }
 void	Screen::printScreen( void ) const { this->writeScreen( std::cout );  std::cout << std::endl; }
 std::ostream &operator<<( std::ostream &out, const Screen &rhs ) { rhs.writeScreen( out );  return out; }
