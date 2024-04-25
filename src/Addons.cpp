@@ -1,5 +1,9 @@
 # include "Addons.hpp"
 
+
+int	getSign( int val ) { return (( val > 0 ) - ( val < 0 )); }	// TODO : make template
+
+
 // Screen addons
 uint32_t	convColour( const t_colour &colour ) { return ( convColour( colour.r, colour.g, colour.b, colour.a )); }
 uint32_t	convColour( byte r, byte g, byte b, byte a )
@@ -50,7 +54,7 @@ uint32_t getNextColour( void )
 		case C_LGRAY:	colour = C_GRAY;	break;
 		case C_GRAY:	colour = C_DGRAY;	break;
 		case C_DGRAY:	colour = C_BLACK;	break;
-		default:		colour = C_RED;	break;
+		default:		colour = C_RED;		break;
 	}
 	return ( colour );
 }

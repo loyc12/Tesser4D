@@ -59,7 +59,6 @@ class Position
 		void	printPos( void ) const;
 
 		friend	std::ostream &operator<<( std::ostream &out, const Position &rhs );
-
 };
 
 #endif // POSITION_HPP

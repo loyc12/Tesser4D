@@ -43,6 +43,12 @@ double	Position::getX( void ) const { return ( this->x ); }
 double	Position::getY( void ) const { return ( this->y ); }
 double	Position::getZ( void ) const { return ( this->z ); }
 
+// Clearers
+void	Position::clearX( void ) { this->x = 0; }
+void	Position::clearY( void ) { this->y = 0; }
+void	Position::clearZ( void ) { this->z = 0; }
+void	Position::clearPos( void ) { this->clearX();  this->clearY();  this->clearZ(); }
+
 // Fetchers
 
 // Checkers

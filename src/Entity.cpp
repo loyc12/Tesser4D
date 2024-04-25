@@ -60,3 +60,17 @@ void	Entity::writeEntity( std::ostream &out ) const
 	this->tile.writeTile( out );
 	out << " ]";
 }
+void	Entity::printEntity( void ) const
+{
+	std::cout << "[ ";
+	this->pos.printPos();
+	std::cout << " | ";
+	this->tile.printTile();
+	std::cout << " ]";
+}
+
+std::ostream &operator<<( std::ostream &out, const Entity &rhs )
+{
+	rhs.writeEntity( out );
+	return out;
+}

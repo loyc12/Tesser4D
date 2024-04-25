@@ -43,6 +43,12 @@ int		Coords::getX( void ) const { return ( this->X ); }
 int		Coords::getY( void ) const { return ( this->Y ); }
 int		Coords::getZ( void ) const { return ( this->Z ); }
 
+// Clearers
+void	Coords::clearX( void ) { this->X = 0; }
+void	Coords::clearY( void ) { this->Y = 0; }
+void	Coords::clearZ( void ) { this->Z = 0; }
+void	Coords::clearCoords( void ) { this->clearX();  this->clearY();  this->clearZ(); }
+
 // Fetchers
 
 // Checkers
