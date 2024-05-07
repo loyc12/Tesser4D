@@ -33,6 +33,12 @@ Position &Position::operator= ( const Position &other )
 	return *this;
 }
 
+// Clearers
+void	Position::clearX( void ) { this->x = 0; }
+void	Position::clearY( void ) { this->y = 0; }
+void	Position::clearZ( void ) { this->z = 0; }
+void	Position::clearPos( void ) { this->clearX();  this->clearY();  this->clearZ(); }
+
 // Setters
 void	Position::setX( double _x ) { this->x = _x; }
 void	Position::setY( double _y ) { this->y = _y; }
@@ -42,12 +48,13 @@ void	Position::setZ( double _z ) { this->z = _z; }
 double	Position::getX( void ) const { return ( this->x ); }
 double	Position::getY( void ) const { return ( this->y ); }
 double	Position::getZ( void ) const { return ( this->z ); }
-
-// Clearers
-void	Position::clearX( void ) { this->x = 0; }
-void	Position::clearY( void ) { this->y = 0; }
-void	Position::clearZ( void ) { this->z = 0; }
-void	Position::clearPos( void ) { this->clearX();  this->clearY();  this->clearZ(); }
+double	Position::getLength( void ) const
+{
+	return ( double )( sqrt(
+	( this->x * this->x ) +
+	( this->y * this->y ) +
+	( this->z * this->z )));
+}
 
 // Fetchers
 

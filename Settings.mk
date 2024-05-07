@@ -12,7 +12,7 @@ SRCFILES	=	main \
 				Game \
 				GameLoop \
 				Position \
-				Ray \
+				Ray RayMath \
 				Screen \
 				Tile \
 				Addons \

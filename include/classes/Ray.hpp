@@ -21,6 +21,7 @@ class Ray
 	protected:
 		// Nested Classes
 		class BadInit	: XCPT( "Ray error : failed to initialise"; );
+		class BadNorm	: XCPT( "Ray error : failed to normalize ( magnitude can't be zero )"; );
 
 		// Clearers
 		void	clearOrigin( void );
@@ -82,6 +83,9 @@ class Ray
 		// Finders
 		double findFirstVals( void );
 		double findStepVals( void );
+
+		// Math functions
+		void normalize( void );
 
 		// Raycasting functions
 		void findNextHit( void );

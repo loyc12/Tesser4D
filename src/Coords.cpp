@@ -33,6 +33,12 @@ Coords &Coords::operator= ( const Coords &other )
 	return *this;
 }
 
+// Clearers
+void	Coords::clearX( void ) { this->X = 0; }
+void	Coords::clearY( void ) { this->Y = 0; }
+void	Coords::clearZ( void ) { this->Z = 0; }
+void	Coords::clearCoords( void ) { this->clearX();  this->clearY();  this->clearZ(); }
+
 // Setters
 void	Coords::setX( int _X ) { this->X = _X; }
 void	Coords::setY( int _Y ) { this->Y = _Y; }
@@ -42,12 +48,13 @@ void	Coords::setZ( int _Z ) { this->Z = _Z; }
 int		Coords::getX( void ) const { return ( this->X ); }
 int		Coords::getY( void ) const { return ( this->Y ); }
 int		Coords::getZ( void ) const { return ( this->Z ); }
-
-// Clearers
-void	Coords::clearX( void ) { this->X = 0; }
-void	Coords::clearY( void ) { this->Y = 0; }
-void	Coords::clearZ( void ) { this->Z = 0; }
-void	Coords::clearCoords( void ) { this->clearX();  this->clearY();  this->clearZ(); }
+double	Coords::getLength( void ) const
+{
+	return ( double )( sqrt(
+	( this->X * this->X ) +
+	( this->Y * this->Y ) +
+	( this->Z * this->Z )));
+}
 
 // Fetchers
 

@@ -47,6 +47,7 @@ class Coords
 		int		getX( void ) const;
 		int		getY( void ) const;
 		int		getZ( void ) const;
+		double	getLength( void ) const;
 
 		// Fetchers
 

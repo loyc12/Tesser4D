@@ -47,6 +47,7 @@ class Position
 		double	getX( void ) const;
 		double	getY( void ) const;
 		double	getZ( void ) const;
+		double	getLength( void ) const;
 
 		// Fetchers
 
