@@ -3,8 +3,13 @@
 #ifndef DEFS_H
 # define DEFS_H
 
+# include "enums.h"
+
+// ======== FLAGS ======== //
+
 # define DEBUG_MODE true
 
+# define EXEMPLE_FLAG E_FS_OFF
 
 // ======== SHORTCUTS ======== //
 
@@ -22,9 +27,6 @@
 # define PRESSED( keydata, match )	( keydata.key == match && keydata.action == MLX_PRESS )
 # define HELD( keydata, match )		( keydata.key == match && keydata.action == MLX_REPEAT )
 
-// ======== CONSTANTS ======== //
-
-
 // ======== STRUCTS ======== //
 
 typedef struct s_colour
@@ -35,29 +37,6 @@ typedef struct s_colour
 	byte	a;
 }			t_colour;
 
-// ======== ENUMS ======== //	t_gstate;
-
-//direction ID (
-typedef enum e_did
-{
-	DID_NONE	= -1,
-	DID_FRONT	= 0,
-	DID_RIGHT	= 1,
-	DID_TOP		= 2,
-	DID_BACK	= 3,
-	DID_LEFT	= 4,
-	DID_BOTTOM	= 5,
-	DID_COUNT		= 5
-}				t_tid;
-
-//tile type (how should we interact/display this tile)
-typedef enum e_ttype
-{
-	TTYPE_ERROR	= -1,
-	TTYPE_VOID	= 0,
-	TTYPE_FULL	= 1,
-	TTYPE_COUNT	= 1
-}				t_ttype;
 #endif // DEFS_H
 
 
